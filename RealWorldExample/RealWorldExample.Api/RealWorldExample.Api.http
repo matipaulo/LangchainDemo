@@ -1,0 +1,30 @@
+@host = http://localhost:5178
+@conversationId = b562628c-faf8-457c-afb5-39471a4fa4a8
+
+### Ingest PDF
+POST {{host}}/api/Ask/ingest
+Accept: */*
+Content-Type: application/json
+
+"https://ureaknowhow.com/wp-content/uploads/2020/04/2020-How-to-troubleshoot-a-plate-heat-exchanger.pdf"
+
+### Ask about issue with a fridge
+POST {{host}}/{{conversationId}}/ask
+Accept: text/plain
+Content-Type: application/json
+
+"My fridge is not cooling properly."
+
+### Ask about issue with a HVAC
+POST {{host}}/{{conversationId}}/ask
+Accept: text/plain
+Content-Type: application/json
+
+"My HVAC system is not heating at all"
+
+### Ask for a work order
+POST {{host}}/{{conversationId}}/ask
+Accept: text/plain
+Content-Type: application/json
+
+"Create a work order"
